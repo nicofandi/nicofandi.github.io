@@ -56,42 +56,53 @@
 main {
   min-height: 80vh;
 }
-main section {
+main p {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 0.7rem;
+}
+main .titulo {
+  font-family: "Avenir Black";
+  margin-left: 110px;
+  margin-top: 50px;
+}
+
+/*Tarjetas*/
+.contenedorprod {
   height: auto;
   display: flex;
   flex-direction: column;
   padding: 2%;
+  margin-left: 100px;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  justify-content: center;
 }
-main section p {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 0.7rem;
+.contenedorprod::-webkit-scrollbar {
+  width: 2px;
+  background-color: rgb(233, 218, 218);
 }
-main section .titulo {
-  font-family: "Avenir Black";
-  padding: 10px;
-  margin-left: 20px;
+.contenedorprod::-webkit-scrollbar-thumb {
+  background-color: #ff9e4e;
+  border-radius: 9px;
 }
-
-/*Tarjetas*/
-.productos {
-  display: flex;
+.contenedorprod .productos {
   justify-content: space-evenly;
-  height: -moz-fit-content;
-  height: fit-content;
-  flex-wrap: wrap;
+  width: 1606px;
+  display: flex;
+  flex-wrap: nowrap;
   row-gap: 14px;
+  padding: 4px;
 }
-.productos .tarjeta {
-  height: 23rem;
-  padding: 3%;
-  width: 310px;
+.contenedorprod .productos .tarjeta {
+  height: 404px;
+  padding: 1%;
+  width: 227px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   /*bordes*/
-  border-style: double;
   border-style: groove;
   border-color: grey;
   background-color: #f4f5f9;
@@ -99,36 +110,36 @@ main section .titulo {
   box-shadow: 0 0 5px rgb(104, 104, 104);
   border-radius: 5px;
 }
-.productos .tarjeta:hover {
+.contenedorprod .productos .tarjeta:hover {
   transition: box-shadow 0.2s ease-in-out;
   transform: scale(1.02, 1.02);
   cursor: pointer;
   opacity: 1;
 }
-.productos .tarjeta button {
+.contenedorprod .productos .tarjeta button {
   border-radius: 10px;
   background-color: rgb(44, 169, 44);
   color: white;
-  height: 14%;
-  width: 60%;
+  height: auto;
+  width: 70%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
 }
-.productos img {
-  width: auto;
-  height: 220px;
+.contenedorprod .productos img {
+  width: 170px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.productos .precio {
-  height: 52px;
+.contenedorprod .productos .precio {
+  height: 2rem;
 }
-.productos .oferta {
+.contenedorprod .productos .oferta {
   text-decoration: line-through;
   height: 0px;
 }
@@ -136,7 +147,7 @@ main section .titulo {
 /*footer*/
 footer {
   background: rgb(253, 137, 29);
-  background: linear-gradient(90deg, rgb(253, 137, 29) 0%, rgb(253, 62, 29) 24%, rgb(253, 29, 29) 69%, rgb(252, 176, 69) 100%);
+  background: linear-gradient(90deg, rgb(253, 137, 29) 0%, rgb(253, 62, 29) 9%, rgb(253, 29, 29) 93%, rgb(252, 176, 69) 100%);
 }
 footer .info {
   display: flex;
@@ -386,22 +397,9 @@ Media querie Movil */
   main {
     min-height: 80vh;
   }
-  .cuerpo {
-    height: -moz-fit-content;
-    height: fit-content;
-  }
   main section .titulo {
     text-align: center;
-    margin-bottom: 20px;
-  }
-  .productos {
-    height: auto;
-    padding: 20px;
-    row-gap: 10px;
-  }
-  .productos-container {
-    flex-direction: column;
-    align-items: center;
+    margin: 20px;
   }
   .sub {
     display: flex;
@@ -420,17 +418,35 @@ Media querie Movil */
     border-radius: 3px;
     height: 40px;
   }
-  footer p {
-    font-size: 0.5rem;
+  footer a {
+    font-size: 1.2rem;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
   }
   .maps {
     width: -moz-fit-content;
     width: fit-content;
   }
 }
-@media (max-width: 810px) {
+@media (max-width: 879px) {
   .maps {
     width: -moz-fit-content;
     width: fit-content;
+  }
+  .productos {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1141px) {
+  .contenedorprod {
+    margin: 0;
+  }
+  .productos {
+    width: 150%;
+  }
+  .tarjeta {
+    margin: 1.9%;
   }
 }/*# sourceMappingURL=style.css.map */
